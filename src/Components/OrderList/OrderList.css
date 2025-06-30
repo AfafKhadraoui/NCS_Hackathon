@@ -1,0 +1,169 @@
+.last-orders-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    margin-top: 1.5rem; /* Space from previous sections */
+    font-family: 'Inter', sans-serif; /* Use Inter font */
+}
+
+.last-orders-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f2f5; /* Subtle separator */
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; /* Space between order items */
+}
+
+.order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute items horizontally */
+    padding: 0.8rem 1rem;
+    background-color: #fcfcfc; /* Very light background for each item */
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03); /* Very subtle shadow for items */
+    transition: background-color 0.2s ease;
+}
+
+.order-item:hover {
+    background-color: #f5f5f5; /* Slightly darker on hover */
+}
+
+.customer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    flex: 2; /* Allows customer info to take more space */
+    min-width: 180px; /* Ensure it doesn't get too small */
+}
+
+.customer-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.customer-name {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.95rem;
+    white-space: nowrap; /* Prevent name from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if too long */
+}
+
+.order-product,
+.order-date,
+.order-delivery-agency {
+    flex: 1; /* Equal flex for these columns */
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+    min-width: 80px; /* Minimum width for these columns */
+}
+
+.order-product {
+    font-weight: 500;
+    color: #444;
+}
+
+.order-payment-status {
+    flex: 0.8; /* Slightly smaller flex for status */
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.3rem 0.6rem;
+    border-radius: 5px;
+    text-align: center;
+    min-width: 60px;
+}
+
+/* Specific status colors */
+.status-paid {
+    background-color: transparent; /* Removed background color */
+    color: #6c757d; /* Changed text color to a dark gray */
+}
+
+.order-contact-method {
+    flex: 0.8; /* Slightly smaller flex for contact method */
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #007bff; /* Blue for link */
+    text-decoration: none;
+    text-align: center;
+    min-width: 70px;
+}
+
+/* Specific contact method colors (if needed, example for WhatsApp) */
+.contact-whatsapp {
+    color: #396AFF; /* WhatsApp green */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .order-item {
+        flex-wrap: wrap; /* Allow items to wrap */
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+    .customer-info {
+        flex-basis: 100%; /* Take full width on smaller screens */
+        margin-bottom: 0.5rem;
+    }
+    .order-product,
+    .order-date,
+    .order-delivery-agency,
+    .order-payment-status,
+    .order-contact-method {
+        flex-basis: auto; /* Allow natural sizing */
+        min-width: unset; /* Remove min-width */
+        width: auto; /* Let content determine width */
+        text-align: left; /* Align text left when wrapped */
+        padding: 0.2rem 0;
+    }
+    .order-product { order: 1; width: 100%; } /* Reorder and stack */
+    .order-date { order: 2; }
+    .order-delivery-agency { order: 3; }
+    .order-payment-status { order: 4; }
+    .order-contact-method { order: 5; }
+}
+
+@media (max-width: 600px) {
+    .last-orders-container {
+        padding: 1rem;
+    }
+    .last-orders-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .order-item {
+        padding: 0.6rem 0.8rem;
+    }
+    .customer-image {
+        width: 35px;
+        height: 35px;
+    }
+    .customer-name {
+        font-size: 0.9rem;
+    }
+    .order-product,
+    .order-date,
+    .order-delivery-agency,
+    .order-payment-status,
+    .order-contact-method {
+        font-size: 0.8rem;
+    }
+    .order-payment-status {
+        padding: 0.2rem 0.4rem;
+    }
+}

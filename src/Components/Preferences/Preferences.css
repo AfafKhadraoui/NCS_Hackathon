@@ -1,0 +1,223 @@
+.preferences-container {
+    padding: 30px;
+    background-color: #fcf6fa;
+    min-height: calc(100vh - 60px);
+    font-family: 'Inter', sans-serif;
+}
+
+.preferences-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.preferences-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 3rem; /* Increased padding to make the box bigger */
+    max-width: 200vw; /* Increased max-width to make the box wider */
+    margin: 0 auto;
+    border: 1px solid #e0e0f0;
+}
+
+/* Input Fields (Currency, Mode) */
+.input-group-row {
+    display: flex;
+    gap: 3rem; /* Increased gap between inputs */
+    margin-bottom: 3rem; /* Increased margin below input row */
+    flex-wrap: wrap;
+}
+
+.input-field-wrapper {
+    flex: 1;
+    min-width: 100px; /* Adjusted min-width for input fields */
+}
+
+.input-label {
+    display: block;
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.text-input {
+    width: 90%;
+    padding: 1rem 1.4rem; /* Increased padding */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1.2rem; /* Made the text inside inputs bigger */
+    color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.text-input:focus,
+.text-input.focused { /* Added .focused class for consistency with JS */
+    outline: none;
+    border-color: #5a4fcf;
+    box-shadow: 0 0 0 3px rgba(90, 79, 207, 0.2);
+}
+
+/* Notification Section */
+.notification-section {
+    margin-bottom: 3rem; /* Increased margin below section */
+}
+
+.notification-title {
+    font-size: 1.3rem; /* Slightly larger title font */
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 2rem; /* Increased margin below title */
+    padding-bottom: 1.2rem; /* Increased padding below title */
+    border-bottom: 1px solid #f0f2f5;
+}
+
+.toggle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem; /* Increased margin between toggle items */
+    padding: 0.8rem 0; /* Increased padding */
+}
+
+.toggle-label {
+    font-size: 1.1rem; /* Slightly larger label font */
+    color: #333;
+    flex-grow: 1;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 52px; /* Slightly wider switch */
+    height: 30px; /* Slightly taller switch */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 30px; /* Match height for rounded corners */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 24px; /* Slightly larger thumb */
+    width: 24px; /* Slightly larger thumb */
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #fbbf24;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #fbbf24;
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px); /* Adjusted transform for larger thumb */
+}
+
+/* Save Button */
+.save-button-wrapper {
+    text-align: right;
+    margin-top: 3rem; /* Increased margin above button */
+}
+
+.save-button {
+    background-color: #fbbf24;
+    color: #fff;
+    padding: 1rem 2rem; /* Increased padding */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem; /* Slightly larger font */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.save-button:hover {
+    background-color: #e0a800;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.save-button:active {
+    background-color: #cc9900;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .preferences-container {
+        padding: 15px;
+    }
+    .preferences-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    .preferences-card {
+        padding: 1.5rem;
+        max-width: 100%; /* Ensure it takes full width on smaller screens */
+    }
+    .input-group-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .input-field-wrapper {
+        min-width: 100px
+        
+        ;
+        width: 100%;
+    }
+    .notification-title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    .toggle-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .toggle-label {
+        font-size: 0.95rem;
+    }
+    .save-button {
+        width: 100%;
+        padding: 0.7rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .preferences-card {
+        padding: 1rem;
+    }
+    .input-group-row {
+        gap: 1rem;
+    }
+    .text-input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}

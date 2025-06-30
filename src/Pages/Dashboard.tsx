@@ -3,6 +3,10 @@ import Sidebar from '../Components/Sidebar/Sidebar.tsx';
 import Dah from '../Components/Dashboard/Dash.tsx';
 import Section from '../Components/Section/Section.tsx'; // Import the renamed Section component
 import './CSS/Dashboard.css';
+import DashboardCharts from '../Components/DashboardCharts/DashboardCharts.tsx';
+import image from '../Components/assets/dashboard_image.png';
+import OrderList from '../Components/OrderList/OrderList.tsx';
+import Preferences from '../Components/Preferences/Preferences.tsx';
 
 interface DashboardProps {
   // Add any props you need for the dashboard
@@ -24,7 +28,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
           <div className="dashboard__content">
             {/* Render the Dah component for summary cards */}
             <Dah />
-            {/* Render the new Section component (formerly DashboardCharts) */}
+            <DashboardCharts/>
             <Section />
             {/* Original content, you might want to remove or integrate this */}
             {/* <h1>Dashboard Overview</h1>
@@ -34,8 +38,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
       case 'Orders':
         return (
           <div className="dashboard__content">
-            <h1>Orders Management</h1>
-            <p>Manage your orders here</p>
+            <OrderList/>
           </div>
         );
       case 'Delivery Insights':
@@ -62,8 +65,8 @@ const Dashboard: React.FC<DashboardProps> = () => {
       case 'Setting':
         return (
           <div className="dashboard__content">
-            <h1>Settings</h1>
-            <p>Configure your account settings</p>
+            <h1>Preferences</h1>
+           <Preferences/>
           </div>
         );
       default:
@@ -89,7 +92,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
               </>
             ) : (
               // Wrapped activeSection in a span for consistent styling
-              <span>{activeSection}</span>
+              <span className="dashboard-title-highlight">{activeSection}</span>
             )}
           </h2>
 
@@ -108,7 +111,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
               <div className="icon-button">🔔</div> {/* Notification icon */}
             </div>
             <div className="user-profile">
-              <img src="https://placehold.co/40x40/FFD700/FFFFFF?text=User" alt="User Profile" className="profile-picture" /> {/* Profile picture */}
+              <img src={image} alt="User Profile" className="profile-picture" /> {/* Profile picture */}
             </div>
           </div>
         </header>
