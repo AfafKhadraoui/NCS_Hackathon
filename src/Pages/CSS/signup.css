@@ -24,7 +24,8 @@
 .login-card {
   position: absolute;
   width: 538px;
-  height: 604.71px;
+  min-height: 604.71px; /* Changed from fixed height to min-height */
+  height: auto; /* Allow height to grow */
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -34,6 +35,8 @@
   box-sizing: border-box;
   padding: 40px;
   z-index: 10;
+  max-height: 90vh; /* Prevent card from being too tall */
+  overflow-y: auto; /* Add scroll if needed */
 }
 
 .login-card h2 {
@@ -103,6 +106,12 @@
   cursor: pointer;
   box-shadow: 0px 10px 40px rgba(174, 174, 174, 0.2);
   margin-top: 20px;
+  flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.login-card button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .register-text {
@@ -114,6 +123,47 @@
 }
 
 .register-text span {
+  color: #F1C40F;
+  cursor: pointer;
+}
+
+/* Error message styling */
+.error-message {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 5px;
+  font-family: 'Inter', sans-serif;
+}
+
+.general-error {
+  color: #e74c3c;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Terms checkbox styling */
+.terms-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.terms-container input[type="checkbox"] {
+  width: auto;
+  height: auto;
+  margin: 0;
+}
+
+.terms-text {
+  font-size: 14px;
+  color: #333333;
+  font-family: 'Inter', sans-serif;
+}
+
+.terms-link {
   color: #F1C40F;
   cursor: pointer;
 }
@@ -265,8 +315,10 @@
   .login-card {
     width: 90%;
     max-width: 400px;
+    min-height: auto;
     height: auto;
     padding: 30px 20px;
+    max-height: 95vh; /* Increased for mobile */
   }
   
   .login-card h2 {
