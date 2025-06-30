@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from '../Components/Sidebar/Sidebar.tsx';
-import Dah from '../Components/Dah/Dah.tsx';
+import Dah from '../Components/Dashboard/Dash.tsx';
 import Section from '../Components/Section/Section.tsx'; // Import the renamed Section component
 import './CSS/Dashboard.css';
 
