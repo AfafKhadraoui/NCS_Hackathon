@@ -1,0 +1,290 @@
+
+
+.benefits-container {
+  position: relative;
+  /* min-height: 100vh; */
+  background: linear-gradient(to right, #fffdf6, #fdf7e9);
+  padding: 80px 50px;
+  padding-bottom: 0px;
+  overflow: hidden;
+}
+
+.benefits-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  position: relative;
+}
+
+.benefits-left {
+  flex: 1;
+  max-width: 400px;
+}
+
+.benefits-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--Black);
+  line-height: 1.2;
+  margin-bottom: 50px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.benefit-icon {
+  width: 32px;
+  height: 32px;
+  background: var(--Yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow);
+  color: white;
+}
+
+.benefit-icon span {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.benefit-text {
+  font-size: 18px;
+  color: var(--Black);
+  font-weight: 500;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.benefits-right {
+  flex: 1;
+  position: relative;
+  height: 500px;
+}
+
+.workspace-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+}
+
+.workspace-img {
+  max-width: 100%;
+  height: auto;
+}
+
+.user-card {
+  position: absolute;
+  top: 50px;
+  left: -20px;
+  background: white;
+  padding: 15px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 250px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--Grey);
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--Blue), var(--Peach));
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--Black);
+  margin: 0 0 4px 0;
+}
+
+.user-role {
+  font-size: 14px;
+  color: var(--Grey);
+  margin: 0;
+}
+
+.user-badge {
+  width: 30px;
+  height: 30px;
+  background: var(--Yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--Black);
+}
+
+.income-card {
+  position: absolute;
+  top: 180px;
+  right: -100px;
+  background: white;
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  min-width: 10px;
+}
+
+.income-label {
+  display: block;
+  font-size: 14px;
+  color: var(--Grey);
+  margin-bottom: 8px;
+}
+
+.income-amount {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--Black);
+}
+
+.income-trend {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 18px;
+}
+
+.chat-bubble {
+  position: absolute;
+  bottom: 100px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background: var(--Yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+}
+
+.chat-icon {
+  font-size: 24px;
+}
+
+.success-notification {
+  position: absolute;
+  bottom: 20px;
+  left: 40%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.success-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--Yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.success-text {
+  font-size: 14px;
+  color: var(--Black);
+  font-weight: 500;
+}
+
+.decorative-curve {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.decorative-curve::before {
+  content: '';
+  position: absolute;
+  top: 100px;
+  left: 40%;
+  width: 300px;
+  height: 300px;
+  border: 3px solid var(--Blue);
+  border-radius: 50%;
+  border-right: none;
+  border-bottom: none;
+  transform: rotate(45deg);
+  opacity: 0.3;
+}
+
+@media (max-width: 768px) {
+  .benefits-container {
+    padding: 40px 20px;
+  }
+  
+  .benefits-content {
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+  }
+  
+  .benefits-title {
+    font-size: 36px;
+  }
+  
+  .benefits-right {
+    height: 400px;
+    width: 100%;
+  }
+  
+  .workspace-photo {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  
+  .user-card,
+  .income-card,
+  .chat-bubble,
+  .success-notification {
+    position: relative;
+    margin: 20px auto;
+  }
+}

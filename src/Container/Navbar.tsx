@@ -11,7 +11,7 @@ const Navbar: React.FC = () => {
           <button onClick={() => scrollTo('home')} className="navbar-link">Home</button>
           <button onClick={() => scrollTo('support')} className="navbar-link">Support</button>
           <button onClick={() => scrollTo('Testimonials')} className="navbar-link">Testimonials</button>
-          <button onClick={() => scrollTo('benefits')} className="navbar-link">Benefits</button>
+          <button onClick={() => scrollTo('BenefitsSection')} className="navbar-link">Benefits</button>
           <button onClick={() => scrollTo('about')} className="navbar-link">About Us</button>
         </div>
 

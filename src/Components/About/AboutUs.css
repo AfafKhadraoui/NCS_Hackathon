@@ -1,0 +1,144 @@
+.about-container {
+  background: linear-gradient(to right, #fffdf6, #fdf7e9);
+  margin-top: 60px;
+  padding: 80px 50px;
+  display: flex;
+  align-items: center;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: 100%;
+}
+
+.about-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--Black);
+  margin-bottom: 15px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background: var(--Yellow);
+  margin-bottom: 30px;
+}
+
+.about-description {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--Grey);
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.about-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+
+.yellow-circle {
+  width: 350px;
+  height: 350px;
+  background: var(--Yellow);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 25px;
+}
+
+.about-image {
+  width: 280px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 15px;
+}
+
+.decorative-star {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  width: 30px;
+  height: 30px;
+  color: var(--Black);
+  font-size: 24px;
+}
+
+.decorative-star::before {
+  content: '✦';
+  position: absolute;
+  color: var(--Black);
+}
+
+.decorative-line {
+  position: absolute;
+  bottom: 20px;
+  right: -20px;
+  width: 80px;
+  height: 2px;
+  background: var(--Black);
+  transform: rotate(-45deg);
+}
+
+.decorative-line::before {
+  content: '';
+  position: absolute;
+  right: -5px;
+  top: -2px;
+  width: 10px;
+  height: 6px;
+  background: var(--Black);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 40px 20px;
+  }
+ 
+  .about-content {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+  }
+ 
+  .about-title {
+    font-size: 36px;
+  }
+ 
+  .image-container {
+    width: 450px !important; /* Force override */
+    height: 450px !important;
+  }
+ 
+  .about-right .yellow-circle {
+    width: 400px !important;
+    height: 400px !important;
+  }
+  
+  .about-right .about-image {
+    width: 300px !important;
+    height: auto !important;
+  }
+}
