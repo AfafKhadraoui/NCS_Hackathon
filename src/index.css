@@ -29,6 +29,7 @@ code {
   --radius: 12px;
   --shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
       background: linear-gradient(to right, #fffdf6, #fdf7e9);
+      overflow-x: hidden;
 
 }
 

@@ -1,5 +1,6 @@
 .trusted-section {
   background: linear-gradient(to right, #fffdf6, #fdf7e9);
+  margin-top:  100px;
   padding: 1rem 1rem;
   text-align: center;
 }

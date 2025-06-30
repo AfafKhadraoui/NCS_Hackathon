@@ -1,6 +1,8 @@
 import React from 'react';
 import './Navbar.css';
 import { useScroll } from '../Context/ScrollContext.tsx';
+import { Link } from 'react-router-dom';
+
 const Navbar: React.FC = () => {
   const { scrollTo } = useScroll();
 
@@ -16,8 +18,13 @@ const Navbar: React.FC = () => {
         </div>
 
         <div className="navbar-actions">
-          <button className="navbar-login">Login</button>
-          <button className="navbar-signup">Sign Up</button>
+          <Link to="/login">
+  <button className="navbar-login">Login</button>
+</Link>
+
+<Link to="/signup">
+  <button className="navbar-signup">Sign Up</button>
+</Link>
         </div>
       </div>
     </nav>
