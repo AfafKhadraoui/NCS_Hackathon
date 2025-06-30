@@ -1,5 +1,6 @@
 import Navbar from "./Container/Navbar.tsx";
 import Footer from "./Components/Footer/Footer.tsx";
+import Dashboard from "./Pages/Dashboard.tsx";
 import {
   BrowserRouter,
   Outlet,
@@ -13,18 +14,19 @@ import Login from "./Pages/login.tsx";
 import Signup from "./Pages/signup.tsx";
 import { ScrollProvider } from "./Context/ScrollContext.tsx";
 
-// New ScrollToTop component
+
+// ScrollToTop component
 function ScrollToTop() {
-  const { pathname } = useLocation(); // Get the current path
-
+  const { pathname } = useLocation();
+  
   useEffect(() => {
-    // When the pathname changes, scroll to the top of the window with smooth behavior
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [pathname]); // Depend on pathname to trigger scroll on route change
-
-  return null; // This component doesn't render any UI
+  }, [pathname]);
+  
+  return null;
 }
 
+// Layout with Navbar and Footer
 function Layout() {
   return (
     <>
@@ -35,21 +37,33 @@ function Layout() {
   );
 }
 
+// Layout without Navbar (for dashboard)
+function DashboardLayout() {
+  return (
+    <>
+      <Outlet />
+      <Footer />
+    </>
+  );
+}
+
 function App() {
   return (
-    <BrowserRouter> {/* BrowserRouter should wrap ScrollProvider */}
-      <ScrollProvider> {/* ScrollProvider must be inside BrowserRouter to access routing context */}
-        <ScrollToTop /> {/* Place ScrollToTop here, inside BrowserRouter */}
+    <BrowserRouter>
+      <ScrollProvider>
+        <ScrollToTop />
         <Routes>
+          {/* Routes with Navbar */}
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
           </Route>
-
-          {/* <Route path="/test" element={<Layout />}>
-            <Route index element={<Test />} />
-            </Route> */}
+          
+          {/* Dashboard route without Navbar */}
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<Dashboard />} />
+          </Route>
         </Routes>
       </ScrollProvider>
     </BrowserRouter>

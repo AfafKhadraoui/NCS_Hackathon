@@ -44,27 +44,43 @@ const LandingPage: React.FC<LandingPageProps> = ({ onNavigate }) => {
               <div className="hero-woman">
                 <img src={main} alt="Professional woman" className="woman-image" />
               </div>
-              <div className="payment-card top-payment">
-                <span className="payment-amount">45000.00 DA</span>
+              <div className="fix">
+
+             {/* "Total Income" Card - bottom-payment in your example */}
+<div className="payment-card floating-element bottom-payment" style={{ bottom: '15%', left: '10%' /* Adjust as needed */ }}>
+    <span className="payment-label">Total Income</span>
+    <div className="payment-amount">
+        2450.00 DA
+        <span className="graph-icon"></span> {/* This span will get the SVG background */}
+    </div>
+</div>
               </div>
-              <div className="payment-card bottom-payment">
-                <span className="payment-amount">2450.00 DA</span>
-              </div>
-              <div className="edahabya-card">
+
+{/* "Enter amount / Send" Card - top-payment in your example */}
+<div className="payment-card floating-element top-payment" style={{ top: '20%', right: '15%' /* Adjust as needed */ }}>
+    <span className="payment-label">Enter amount</span>
+    <div className="input-and-button">
+        <input type="text" value="45000.00 DA" readOnly className="payment-amount-input" />
+        <button className="send-button">Send</button>
+    </div>
+</div>
+
+// ... 
+              {/* <div className="edahabya-card">
                 <img src={edahabya} alt="Edahabya Card" className="card-image" />
-              </div>
+              </div> */}
               <div className="static-icon icon-1">
                 <div className="icon-circle blue"><span>✓</span></div>
               </div>
               <div className="static-icon icon-2">
                 <div className="icon-circle yellow"><span>€</span></div>
               </div>
-              <div className="static-icon icon-3">
+              {/* <div className="static-icon icon-3">
                 <div className="icon-circle peach"><span>$</span></div>
-              </div>
-              <div className="static-icon icon-4">
+              </div> */}
+              {/* <div className="static-icon icon-4">
                 <div className="icon-circle blue-dark"><span>📊</span></div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

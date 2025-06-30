@@ -1,0 +1,182 @@
+.charts-section-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); /* Two columns, responsive */
+    gap: 1.5rem;
+    margin-top: 2rem; /* Space from the summary cards above */
+}
+
+.chart-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: 350px; /* Fixed height for consistency */
+}
+
+.chart-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Line Chart Styles */
+.line-chart-container {
+    display: flex;
+    flex-grow: 1;
+    position: relative;
+    padding-left: 30px; /* Space for Y-axis labels */
+    padding-bottom: 30px; /* Space for X-axis labels */
+}
+
+.y-axis-labels {
+    display: flex;
+    flex-direction: column-reverse; /* To align labels from bottom to top */
+    justify-content: space-between;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.8rem;
+    color: #6c757d;
+    padding-right: 5px;
+}
+
+.x-axis-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 30px; /* Align with chart grid */
+    font-size: 0.8rem;
+    color: #6c757d;
+    padding-top: 5px;
+}
+
+.chart-grid {
+    flex-grow: 1;
+    position: relative;
+    border-left: 1px solid #e0e0e0; /* Y-axis line */
+    border-bottom: 1px solid #e0e0e0; /* X-axis line */
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* For 6 X-axis points */
+    grid-template-rows: repeat(4, 1fr); /* For 4 horizontal grid lines (excluding axis) */
+}
+
+.grid-line.horizontal {
+    border-top: 1px dotted #e9ecef; /* Dotted grid lines */
+    grid-column: 1 / -1; /* Span all columns */
+    margin-top: -1px; /* Adjust to sit on the grid line */
+}
+
+.grid-line.vertical {
+    border-right: 1px dotted #e9ecef; /* Dotted grid lines */
+    grid-row: 1 / -1; /* Span all rows */
+    margin-right: -1px; /* Adjust to sit on the grid line */
+}
+/* Last vertical grid line should not have a border-right */
+.chart-grid .grid-line.vertical:last-child {
+    border-right: none;
+}
+
+
+.line-graph-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 1px); /* Adjust for bottom border */
+    overflow: visible; /* Ensure points are not clipped if slightly outside */
+}
+
+/* Bar Chart Styles */
+.bar-chart-container {
+    display: flex;
+    align-items: flex-end; /* Align bars to the bottom */
+    justify-content: space-around;
+    flex-grow: 1;
+    padding-top: 20px; /* Space for values on top of bars */
+    position: relative;
+    border-bottom: 1px solid #e0e0e0; /* X-axis line for bar chart */
+}
+
+.bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; /* Push bar and label to bottom */
+    height: 100%;
+    flex-shrink: 0;
+    width: 40px; /* Width of each bar wrapper */
+    position: relative;
+}
+
+.bar {
+    width: 25px; /* Width of the actual bar */
+    background-color: #e0e0e0; /* Default bar color */
+    border-radius: 4px 4px 0 0; /* Rounded top corners */
+    transition: height 0.3s ease;
+}
+
+.bar.highlighted-bar {
+    background-color: #fbbf24; /* Yellow for the highlighted bar */
+}
+
+.bar-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-top: 5px;
+    text-align: center;
+    white-space: nowrap; /* Prevent label from wrapping */
+}
+
+.bar-value {
+    position: absolute;
+    top: 0; /* Position above the bar */
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333;
+    transform: translateY(-120%); /* Move value above the bar */
+    white-space: nowrap;
+}
+
+
+/* Responsive adjustments for DashboardCharts.css */
+@media (max-width: 900px) {
+    .charts-section-container {
+        grid-template-columns: 1fr; /* Stack charts vertically on smaller screens */
+    }
+    .chart-card {
+        height: 300px; /* Slightly reduce height on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .chart-card {
+        padding: 1rem;
+    }
+    .chart-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .y-axis-labels, .x-axis-labels, .bar-label, .bar-value {
+        font-size: 0.75rem;
+    }
+    .line-chart-container {
+        padding-left: 25px;
+        padding-bottom: 25px;
+    }
+    .x-axis-labels {
+        left: 25px;
+    }
+    .bar {
+        width: 20px;
+    }
+    .bar-wrapper {
+        width: 35px;
+    }
+}

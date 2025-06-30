@@ -1,0 +1,106 @@
+/* New Summary Cards Section */
+.summary-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 1.5rem; /* Space between cards */
+    margin-bottom: 2rem; /* Space below the cards */
+}
+
+.summary-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.summary-card .icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+    background-color: #e6f7f5; /* Default light background */
+}
+
+/* Specific icon circle colors */
+.summary-card .icon-circle.green-light {
+    background-color: #e6f7f5; /* Light green-ish */
+    color: #2ecc71; /* Green icon color */
+}
+
+.summary-card .icon-circle.blue-light {
+    background-color: #e0f2fe; /* Light blue */
+    color: #3498db; /* Blue icon color */
+}
+
+.summary-card .icon-circle.pink-light {
+    background-color: #ffebee; /* Light pink */
+    color: #e74c3c; /* Red/pink icon color */
+}
+
+.summary-card .icon-svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor; /* Use the color defined by the parent .icon-circle */
+}
+
+.summary-card .card-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.summary-card .card-label {
+    font-size: 0.9rem;
+    color: #6c757d; /* Gray label text */
+    margin-bottom: 0.2rem;
+}
+
+.summary-card .card-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333333; /* Darker value text */
+}
+
+/* Responsive adjustments for Dah.css */
+@media (max-width: 1200px) {
+    .summary-cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .summary-cards-container {
+        grid-template-columns: 1fr; /* Stack cards vertically on small screens */
+        gap: 1rem;
+    }
+
+    .summary-card {
+        padding: 1rem;
+    }
+
+    .summary-card .icon-circle {
+        width: 40px;
+        height: 40px;
+    }
+
+    .summary-card .icon-svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .summary-card .card-value {
+        font-size: 1.2rem;
+    }
+}

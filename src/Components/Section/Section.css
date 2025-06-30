@@ -1,0 +1,272 @@
+/* Dashboard.css (now Section.css) */
+
+/* Loading state */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f8fafc;
+  /* min-height: 50vh; */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Most Returned Product Styles */
+.returned-product-section {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.returned-product-header {
+  background-color: white;
+  color: #374151;
+  padding: 20px 24px 16px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.returned-product-content {
+  padding: 0;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s ease;
+}
+
+.product-item:hover {
+  background-color: #fafafa;
+}
+
+.product-item:last-child {
+  border-bottom: none;
+}
+
+.product-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #1f2937;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  color: white;
+  font-size: 24px;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.product-issue {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.product-stats {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.stat-group {
+  text-align: center;
+}
+
+.returns-count {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.returns-label {
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.return-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ef4444;
+}
+
+.return-value-label {
+  font-size: 11px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Most Active Employee Styles */
+.active-employee-section {
+  flex: 1;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.active-employee-header {
+  background-color: white;
+  padding: 20px 24px 16px 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.active-employee-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 16px 0;
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 4px;
+}
+
+.header-number {
+  width: 60px;
+}
+
+.header-name {
+  flex: 1;
+}
+
+.header-orders {
+  width: 80px;
+  text-align: center;
+}
+
+.header-return {
+  width: 80px;
+  text-align: center;
+}
+
+.employee-list {
+  padding: 0;
+}
+
+.employee-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 24px;
+  font-size: 14px;
+  border-bottom: 1px solid #f9fafb;
+  transition: background-color 0.2s ease;
+}
+
+.employee-item:hover {
+  background-color: #fafafa;
+}
+
+.employee-item:last-child {
+  border-bottom: none;
+}
+
+.employee-number {
+  width: 60px;
+  color: #9ca3af;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.employee-name {
+  flex: 1;
+  color: #111827;
+  font-weight: 500;
+}
+
+.employee-orders {
+  width: 80px;
+  text-align: center;
+  color: #111827;
+  font-weight: 600;
+}
+
+.employee-return {
+  width: 80px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.employee-return.positive {
+  color: #10b981;
+}
+
+.employee-return.negative {
+  color: #ef4444;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .returned-product-header,
+  .active-employee-header {
+    padding: 16px 20px 12px 20px;
+  }
+  
+  .product-item {
+    padding: 16px 20px;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+  
+  .product-details {
+    text-align: center;
+  }
+  
+  .product-stats {
+    gap: 24px;
+  }
+  
+  .employee-item {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+  
+  .table-header {
+    font-size: 11px;
+    padding: 0 20px;
+  }
+}

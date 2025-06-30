@@ -105,7 +105,7 @@
 .yellow-background-shape {
   position: absolute;
   width: 400px;
-  height: 420px;
+  height: 520px;
   background: linear-gradient(135deg, var(--Yellow) 0%, #F39C12 100%);
   border-radius: 30px;
   z-index: 1;
@@ -143,15 +143,15 @@
 }
 
 .top-payment {
-  top: 40px;
   left: -60px;
   transform: rotate(-8deg);
 }
 
+
 .bottom-payment {
   bottom: 60px;
   right: -70px;
-  transform: rotate(12deg);
+  transform: rotate(-1deg);
 }
 
 .payment-amount {
@@ -271,4 +271,130 @@
     width: 200px;
     height: 6px;
   }
+}
+
+/* Base styles for all payment cards */
+.payment-card {
+    background-color: #ffffff; /* White background */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow */
+    padding: 15px 20px; /* Internal padding */
+    font-family: 'Inter', sans-serif; /* Consistent font */
+    position: absolute; /* To allow floating positioning */
+    z-index: 5; /* Ensure they appear above background elements */
+    /* Add animation if desired, similar to other floating elements */
+    animation: float 6s ease-in-out infinite; /* Reuse float animation */
+}
+
+/* Style for the "Total Income" card (bottom-payment in your example) */
+.payment-card.bottom-payment {
+    width: 180px; /* Fixed width based on visual */
+    text-align: left;
+    transform: rotate(-5deg); /* Slight rotation */
+    /* Positioning - example values, adjust as needed in your JSX/TSX */
+    /* bottom: 15%; */
+    /* left: 10%; */
+}
+
+.bottom-payment .payment-label {
+    font-size: 13px;
+    color: #888888; /* Lighter gray for the label */
+    margin-bottom: 4px;
+    display: block; /* Ensures it takes full width */
+}
+
+.bottom-payment .payment-amount {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333; /* Darker text for the amount */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* To push graph icon to the right */
+}
+
+.bottom-payment .graph-icon {
+    width: 25px; /* Size of the graph icon */
+    height: 15px; /* Height of the graph icon */
+    /* SVG for the small bar graph icon */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fbbf24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='4' y1='18' x2='4' y2='6'%3E%3C/line%3E%3Cline x1='12' y1='18' x2='12' y2='10'%3E%3C/line%3E%3Cline x1='20' y1='18' x2='20' y2='14'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 8px; /* Space between amount and graph */
+}
+
+
+/* Style for the "Enter amount / Send" card (top-payment in your example) */
+.payment-card.top-payment {
+    width: 280px; /* Fixed width based on visual */
+    text-align: left;
+    transform: rotate(2deg); /* Slight rotation */
+    top: 0px;
+     right: 15%;
+     position: absolute;
+}
+
+.top-payment .payment-label {
+    font-size: 13px;
+    color: #888888;
+    display: block;
+}
+
+.top-payment .input-and-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #e0e0e0; /* Subtle line under the input/button group */
+    padding-bottom: 5px; /* Space between content and the line */
+}
+
+.top-payment .payment-amount-input {
+    flex-grow: 1; /* Allows it to take available space */
+    font-size: 18px;
+    font-weight: 600;
+    color: #333333;
+    border: none; /* No border for input field itself */
+    padding: 0; /* No padding for input field to fit visual */
+    outline: none; /* Remove focus outline */
+    background: transparent; /* Transparent background */
+    width: 100%; /* Occupy available space */
+    padding-top: 5px; /* Add some top padding to align with button */
+}
+
+.top-payment .send-button {
+    background-color: #fbbf24; /* Yellow background */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 8px; /* Slightly more rounded than the card */
+    padding: 8px 15px; /* Padding for button */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Prevents button from shrinking */
+}
+
+.top-payment .send-button:hover {
+    background-color: #f59e0b; /* Darker yellow on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .payment-card.bottom-payment {
+        width: 150px;
+        /* font-size: 16px; - removed as it's for parent, not directly amount */
+    }
+    .payment-card.top-payment {
+        width: 250px;
+        /* font-size: 16px; - removed as it's for parent, not directly input */
+    }
+    .bottom-payment .payment-amount {
+        font-size: 16px;
+    }
+    .top-payment .payment-amount-input {
+        font-size: 16px;
+    }
+    .top-payment .send-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
 }

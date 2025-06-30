@@ -1,6 +1,7 @@
 import React from 'react';
 import './BenefitsSection.css';
 import benefit from '../assets/benefit.png';
+import image from '../assets/image.png'
 
 const BenefitsSection = () => {
   return (
@@ -60,10 +61,10 @@ const BenefitsSection = () => {
           
           <div className="user-card">
             <div className="user-avatar">
-              <div className="avatar-image"></div>
+              <img className="avatar-image" src={ image}></img>
             </div>
             <div className="user-info">
-              <h3 className="user-name">Khadraoui Afaf</h3>
+              <h3 className="user-name">Omar Ziani</h3>
               <p className="user-role">Expert Saving Money</p>
             </div>
             <div className="user-badge">

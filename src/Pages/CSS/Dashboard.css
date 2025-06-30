@@ -1,0 +1,184 @@
+/* General Dashboard Layout */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Light background for the overall dashboard */
+}
+
+.dashboard__main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dashboard Header */
+.dashboard__header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+      background-color: #fff
+}
+
+.dashboard__header-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+  ;
+}
+
+.dashboard-title-highlight {
+    color: #fbbf24; /* Yellow color for "Dashboard" text */
+}
+
+.dashboard__header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f2f5; /* Light gray background for search input */
+    border-radius: 25px;
+    padding: 0.6rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.3); /* Yellow focus ring */
+    background-color: #ffffff;
+}
+
+.search-icon {
+    font-size: 1.1rem;
+    color: #6c757d; /* Gray icon color */
+    margin-right: 0.5rem;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+    width: 200px; /* Adjust width as needed */
+}
+
+.search-input::placeholder {
+    color: #a0a0a0;
+}
+
+/* Header Icons (Settings, Notification) */
+.header-icons {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.icon-button {
+    background-color: #f0f2f5; /* Light gray background for icons */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #6c757d; /* Gray icon color */
+}
+
+.icon-button:hover {
+    background-color: #e0e2e5;
+    transform: translateY(-1px);
+}
+
+/* User Profile */
+.user-profile .profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fbbf24; /* Yellow border around profile picture */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Body Content */
+.dashboard__body {
+    flex-grow: 1;
+    padding: 2rem;
+    background-color: #f8f9fa; /* Consistent background */
+}
+
+.dashboard__content {
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dashboard__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .dashboard__header-right {
+        width: 100%;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .search-input {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .search-bar {
+        flex-grow: 1; /* Allow search bar to expand */
+    }
+
+    .header-icons {
+        gap: 0.5rem;
+    }
+
+    .icon-button {
+        width: 35px;
+        height: 35px;
+        font-size: 1.1rem;
+    }
+
+    .user-profile .profile-picture {
+        width: 35px;
+        height: 35px;
+    }
+
+    .dashboard__body {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard__header-title {
+        font-size: 1.5rem;
+    }
+
+    .search-input {
+        font-size: 0.9rem;
+    }
+
+    .icon-button {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+
+    .user-profile .profile-picture {
+        width: 30px;
+        height: 30px;
+    }
+}

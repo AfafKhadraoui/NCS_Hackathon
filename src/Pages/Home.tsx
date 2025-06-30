@@ -11,10 +11,10 @@ const Home: React.FC = () => {
   return (
     <>
       <div ref={refs.home}><LandingPage /></div>
+      <div ref={refs.AboutUs}><AboutUs /></div>
       <div ref={refs.support}><Support /></div>
       <div ref={refs.Testimonials}><Testimonials /></div>
       <div ref={refs.BenefitsSection}><BenefitsSection /></div>
-      <div ref={refs.AboutUs}><AboutUs /></div>
       {/* Add other sections later */}
     </>
   );
