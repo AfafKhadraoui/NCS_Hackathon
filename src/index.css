@@ -12,44 +12,23 @@ code {
     monospace;
 }
 
-/* :root {
+/* /* :root {
 	--sunrise-yellow: #fbbe12;
 	--golden-orange: #fba919;
 	--deep-blue: #1b3766;
 	--midnight-navy: #102a4d;
-}
-
-::selection {
-	background-color: var(--golden-orange);
-	color: white;
 } */
 
-/* WebKit browsers (Chrome, Safari) */
-/* ::-webkit-scrollbar {
-	width: 12px;  */
-/* Width of the scrollbar */
-/* } */
+:root{
+  --Yellow:#F1C40F;
+  --Black: #000;
+  --Grey: #A9A7B6;
+  --Blue:#137CB0;
+  --Peach:#FFAA94;
+  --Light_Grey:#F9F8FE
+  --radius: 12px;
+  --shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+      background: linear-gradient(to right, #fffdf6, #fdf7e9);
 
-/* ::-webkit-scrollbar-track {
-	background: #1e085e;  */
-/* Background of the scrollbar track */
-/* } */
+}
 
-/* ::-webkit-scrollbar-thumb { */
-/* background: #25097f;  */
-/* Color of the scrollbar thumb */
-/* border-radius: 10px;  */
-/* Rounded corners */
-/* } */
-
-/* ::-webkit-scrollbar-thumb:hover { */
-/* background: #1f1479;  */
-/* Color of the scrollbar thumb on hover */
-/* } */
-
-/* * { */
-/* scrollbar-width: thin;  */
-/* Thin scrollbar */
-/* scrollbar-color: #fda916 #eef1f6;  */
-/* Color of the scrollbar thumb and track */
-/* } */

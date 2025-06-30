@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+.navbar {
+  width: 100%;
+  background-color: #fefcf3;
+  border-bottom: 1px solid rgba(169, 167, 182, 0.1);
+  padding: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1.2rem 3rem;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  gap: 12rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.navbar-link {
+  background: none;
+  border: none;
+  color: var(--Grey);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.75rem 0;
+}
+
+.navbar-link:hover {
+  color: var(--Black);
+}
+
+.navbar-link.active {
+  color: var(--Black);
+  font-weight: 600;
+}
+
+.navbar-actions {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar-login {
+  background: none;
+  border: none;
+  color: var(--Grey);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar-login:hover {
+  color: var(--Black);
+  background-color: rgba(169, 167, 182, 0.08);
+}
+
+.navbar-signup {
+  background-color: var(--Yellow);
+  border: none;
+  color: var(--Black);
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(241, 196, 15, 0.2);
+}
+
+.navbar-signup:hover {
+  background-color: #e6b800;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(241, 196, 15, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 1rem;
+  }
+
+  .navbar-links {
+    gap: 1rem;
+  }
+
+  .navbar-link {
+    font-size: 0.9rem;
+  }
+
+  .navbar-signup {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-container {
+    justify-content: flex-end;
+  }
+}
