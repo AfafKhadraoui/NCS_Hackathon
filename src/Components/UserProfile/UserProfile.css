@@ -1,0 +1,174 @@
+.user-profile-container {
+    padding: 40px;
+    background-color: #fcf6fa; /* Light pink/purple background */
+    min-height: calc(100vh - 80px); /* Adjust height to fit content and padding */
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to start to prevent excessive vertical centering */
+}
+
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 3rem; /* Padding inside the card */
+    max-width: 1400px; /* Max width for the card */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    margin: 0 auto; /* Center the card horizontally */
+    border: 1px solid #e0e0f0; /* Subtle light purple/blue border */
+    display: grid; /* Changed to grid for layout control */
+    grid-template-columns: auto 1fr; /* Avatar column and then form fields column */
+    gap: 2rem; /* Gap between avatar and form fields */
+    align-items: flex-start; /* Align items to the top of their grid areas */
+}
+
+/* Avatar Section */
+.avatar-section {
+    display: flex;
+    justify-content: flex-start; /* Aligned to the left */
+    margin-bottom: 0; /* Removed bottom margin as grid handles spacing */
+    padding-top: 0.5rem; /* Adjust padding to align with first input field if needed */
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 120px; /* Container size */
+    height: 120px; /* Container size */
+    border-radius: 50%;
+    overflow: hidden; /* This ensures the image doesn't go outside the circle */
+    flex-shrink: 0; /* Prevent shrinking in grid */
+    border: 3px solid #e9ecef; /* Border around the circle */
+}
+
+.user-avatar {
+    width: 100% !important; /* Fill the entire container width */
+    height: 100% !important; /* Fill the entire container height */
+    object-fit: cover !important; /* Cover the entire area, may crop image */
+    object-position: center !important; /* Center the image */
+    display: block !important;
+    border-radius: 0 !important; /* Remove border-radius from img since container handles it */
+    border: none !important; /* Remove border from img since container handles it */
+}
+
+/* Form Fields Grid */
+.form-fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 1.5rem 2rem; /* Row gap and column gap */
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.text-input {
+    width: 90%;
+    padding: 0.8rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: #5a4fcf; /* Highlight border on focus */
+    box-shadow: 0 0 0 3px rgba(90, 79, 207, 0.2); /* Subtle shadow on focus */
+}
+
+/* Save Button */
+.save-button-wrapper {
+    grid-column: 1 / -1; /* Span across all columns in the grid */
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    margin-top: 2rem; /* Space above the button */
+}
+
+.save-button {
+    background-color: #fbbf24; /* Yellow background */
+    color: #fff;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.save-button:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.save-button:active {
+    background-color: #cc9900; /* Even darker on click */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .user-profile-container {
+        padding: 20px;
+    }
+    .profile-card {
+        grid-template-columns: 1fr; /* Stack avatar and form fields vertically */
+        padding: 2rem;
+        gap: 1.5rem;
+    }
+    .avatar-section {
+        justify-content: center; /* Center avatar when stacked */
+        margin-bottom: 1rem;
+        padding-top: 0;
+    }
+    .form-fields-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 1.5rem;
+    }
+    .avatar-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+    .input-label {
+        font-size: 0.85rem;
+    }
+    .text-input {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+    .save-button {
+        width: 100%; /* Full width button on small screens */
+        padding: 0.7rem 1.5rem;
+    }
+    .save-button-wrapper {
+        grid-column: auto; /* Reset grid-column for stacking */
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card {
+        padding: 1.5rem;
+    }
+    .form-fields-grid {
+        gap: 1rem;
+    }
+    .input-label {
+        font-size: 0.8rem;
+    }
+    .text-input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}

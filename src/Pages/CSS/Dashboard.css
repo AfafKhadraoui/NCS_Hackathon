@@ -1,14 +1,17 @@
 /* General Dashboard Layout */
 .dashboard {
     display: flex;
-    min-height: 100vh;
-    background-color: #f8f9fa; /* Light background for the overall dashboard */
+    min-height: 100vh; 
+     background-color: #fcf6fa; /* Light pink/purple background */
+; /* Light background for the overall dashboard */
 }
 
 .dashboard__main {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+         background-color: #fcf6fa; /* Light pink/purple background */
+
 }
 
 /* Dashboard Header */
@@ -97,6 +100,10 @@
     transform: translateY(-1px);
 }
 
+.profile-picture
+{
+     cursor: pointer;
+}
 /* User Profile */
 .user-profile .profile-picture {
     width: 40px;
@@ -111,7 +118,7 @@
 .dashboard__body {
     flex-grow: 1;
     padding: 2rem;
-    background-color: #f8f9fa; /* Consistent background */
+     background-color: #fcf6fa; /* Light pink/purple background */
 }
 
 .dashboard__content {
